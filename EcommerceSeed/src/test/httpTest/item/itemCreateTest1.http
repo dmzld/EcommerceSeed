@@ -1,0 +1,10 @@
+POST http://localhost:8080/item/create
+Content-Type: application/json
+
+{
+  "itemName" : "노브랜드 버터링",
+  "itemType" : "일반",
+  "itemPrice" : 20000,
+  "itemDisplayStartDate" : "2022-01-01",
+  "itemDisplayEndDate" : "2023-01-03"
+}

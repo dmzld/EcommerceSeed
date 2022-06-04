@@ -1,0 +1,9 @@
+POST http://localhost:8080/promotion/create
+Content-Type: application/json
+
+{
+  "promotionNm" : "2022 쓱데이",
+  "discountAmount" : 10000,
+  "promotionStartDate" : "2022-05-01",
+  "promotionEndDate" : "2022-07-03"
+}

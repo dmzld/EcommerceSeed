@@ -1,0 +1,263 @@
+DELETE http://localhost:8080/promotion/delete
+Content-Type: application/json
+
+{
+  "promotionId": 1
+}
+
+<> 2022-06-05T003558.200.json
+
+###
+
+POST http://localhost:8080/promotion/create
+Content-Type: application/json
+
+{
+  "promotionNm" : "2022 쓱데이",
+  "discountAmount" : 10000,
+  "promotionStartDate" : "2022-05-01",
+  "promotionEndDate" : "2022-07-03"
+}
+
+<> 2022-06-05T003551.200.json
+
+###
+
+POST http://localhost:8080/promotion/create
+Content-Type: application/json
+
+{
+  "promotionNm" : "2022 쓱데이",
+  "discountAmount" : 10000,
+  "discountRate" : 0.05,
+  "promotionStartDate" : "2022-05-01",
+  "promotionEndDate" : "2022-07-03"
+}
+
+<> 2022-06-05T003537.200.json
+
+###
+
+DELETE http://localhost:8080/promotion/delete
+Content-Type: application/json
+
+{
+  "promotionId": 1
+}
+
+<> 2022-06-05T003532.500.json
+
+###
+
+DELETE http://localhost:8080/promotion/delete
+Content-Type: application/json
+
+{
+  "promotionId": 1
+}
+
+<> 2022-06-05T002829.404.json
+
+###
+
+DELETE http://localhost:8080/item/delete
+Content-Type: application/json
+
+{
+  "itemId": 1
+}
+
+<> 2022-06-04T234631.200.json
+
+###
+
+POST http://localhost:8080/item/create
+Content-Type: application/json
+
+{
+  "itemName" : "노브랜드 버터링",
+  "itemType" : "일반",
+  "itemPrice" : 20000,
+  "itemDisplayStartDate" : "2022-01-01",
+  "itemDisplayEndDate" : "2023-01-03"
+}
+
+<> 2022-06-04T234531.200.json
+
+###
+
+DELETE http://localhost:8080/item/delete
+Content-Type: application/json
+
+{
+  "itemId": 1
+}
+
+<> 2022-06-04T234519.500.json
+
+###
+
+DELETE http://localhost:8080/user/delete
+Content-Type: application/json
+
+{
+  "userId": 1
+}
+
+<> 2022-06-04T225209.500.json
+
+###
+
+POST http://localhost:8080/user/create
+Content-Type: application/json
+
+{
+  "userName" : "최상면",
+  "userType" : "기업회원",
+  "userStat" : "정상"
+}
+
+<> 2022-06-04T225202.200.json
+
+###
+
+DELETE http://localhost:8080/user/delete
+Content-Type: application/json
+
+{
+  "userId": 1
+}
+
+<> 2022-06-04T225147.200.json
+
+###
+
+POST http://localhost:8080/user/create
+Content-Type: application/json
+
+{
+  "userName" : "이수경",
+  "userType" : "일반",
+  "userStat" : "탈퇴"
+}
+
+<> 2022-06-04T225136.200.json
+
+###
+
+POST http://localhost:8080/user/delete
+Content-Type: application/json
+
+{
+  "userId": 1
+}
+
+<> 2022-06-04T224958.405.json
+
+###
+
+POST http://localhost:8080/user/create
+Content-Type: application/json
+
+{
+  "userName" : "이수경",
+  "userType" : "일반",
+  "userStat" : "탈퇴"
+}
+
+<> 2022-06-04T224944.200.json
+
+###
+
+POST http://localhost:8080/user/create
+Content-Type: application/json
+
+{
+  "userId": 1
+}
+
+<> 2022-06-04T224725.200.json
+
+###
+
+POST http://localhost:8080/user/create
+Content-Type: application/json
+
+{
+  "userName" : "이수경",
+  "userType" : "일반",
+  "userStat" : "탈퇴"
+}
+
+<> 2022-06-04T222038.200.json
+
+###
+
+POST http://localhost:8080/user/create
+Content-Type: application/json
+
+{
+  "userName" : "이수경",
+  "userType" : "일반",
+  "userStat" : "탈퇴"
+}
+
+<> 2022-06-04T222028.200.json
+
+###
+
+POST http://localhost:8080/user/create
+Content-Type: application/json
+
+{
+  "userName" : "이수경",
+  "userType" : "일반",
+  "userStat" : "탈퇴"
+}
+
+###
+
+POST http://localhost:8080/user/create
+Content-Type: application/json
+
+{
+  "userName" : "이수경",
+  "userType" : "일반",
+  "userStat" : "탈퇴"
+}
+
+###
+
+POST http://localhost:8080/user/create
+Content-Type: application/json
+
+{
+  "userName" : "최상면",
+  "userType" : "기업회원",
+  "userStat" : "정상"
+}
+
+###
+
+POST http://localhost:8080/user/create
+Content-Type: application/json
+
+{
+  "userName" : "최상면",
+  "userType" : "기업회원",
+  "userStat" : "정상"
+}
+
+###
+
+POST http://localhost:8080/user/create
+Content-Type: application/json
+
+{
+  "userName" : "이수경",
+  "userType" : "일반",
+  "userStat" : "탈퇴"
+}
+
+###
+

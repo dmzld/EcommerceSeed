@@ -8,6 +8,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Getter
@@ -24,6 +25,9 @@ public class Item {
 
     private String itemName;
     private String itemType;
+
+    private Date itemDisplayStartDate;
+    private Date itemDisplayEndDate;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "item")
     private List<ItemPromotion> itemPromotions = new ArrayList<>();
