@@ -13,14 +13,15 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "users")
 @EntityListeners(AuditingEntityListener.class)
-public class Cust {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long custId;
-    private String custName;
-    private String custType;
-    private String custStat;
+    private Long userId;
+    private String userName;
+    private String userType;
+    private String userStat;
 
 }

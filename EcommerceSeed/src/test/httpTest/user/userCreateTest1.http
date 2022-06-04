@@ -1,0 +1,8 @@
+POST http://localhost:8080/user/create
+Content-Type: application/json
+
+{
+  "userName" : "이수경",
+  "userType" : "일반",
+  "userStat" : "탈퇴"
+}

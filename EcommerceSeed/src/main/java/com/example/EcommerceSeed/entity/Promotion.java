@@ -16,6 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table
 @EntityListeners(AuditingEntityListener.class)
 public class Promotion {
     @Id

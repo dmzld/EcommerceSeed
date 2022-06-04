@@ -8,6 +8,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
+@Table
 @EntityListeners(AuditingEntityListener.class)
 public class ItemPromotion {
 
