@@ -1,3 +1,45 @@
+POST http://localhost:8080/item/create
+Content-Type: application/json
+
+{
+  "itemName" : "노브랜드 버터링",
+  "itemType" : "일반",
+  "itemPrice" : 20000,
+  "itemDisplayStartDate" : "2022-01-01",
+  "itemDisplayEndDate" : "2023-01-03"
+}
+
+<> 2022-06-05T015212.200.json
+
+###
+
+POST http://localhost:8080/promotion/create
+Content-Type: application/json
+
+{
+  "promotionNm" : "2022 쓱데이",
+  "discountAmount" : 10000,
+  "promotionStartDate" : "2022-05-01",
+  "promotionEndDate" : "2022-07-03"
+}
+
+<> 2022-06-05T015208.200.json
+
+###
+
+POST http://localhost:8080/user/create
+Content-Type: application/json
+
+{
+  "userName" : "이수경",
+  "userType" : "일반",
+  "userStat" : "탈퇴"
+}
+
+<> 2022-06-05T015201.200.json
+
+###
+
 DELETE http://localhost:8080/promotion/delete
 Content-Type: application/json
 

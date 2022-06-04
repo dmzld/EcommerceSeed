@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
     private final UserService userService;
 
-    @PostMapping("/create")
+    @PostMapping("/createUser")
     public UserCreate.Response createUser(@RequestBody UserCreate.Request request) {
         return userService.createUser(request);
     }
 
-    @DeleteMapping("/delete")
+    @DeleteMapping("/deleteUser")
     public UserDelete.Response deleteUser(@RequestBody UserDelete.Request request){
         return userService.deleteUser(request);
     }

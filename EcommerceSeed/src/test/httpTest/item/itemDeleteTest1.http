@@ -1,4 +1,4 @@
-DELETE http://localhost:8080/item/delete
+DELETE http://localhost:8080/item/deleteItem
 Content-Type: application/json
 
 {

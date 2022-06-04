@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.*;
 public class ItemController {
     private final ItemService itemService;
 
-    @PostMapping("/create")
+    @PostMapping("/createItem")
     public ItemCreate.Response createItem(@RequestBody ItemCreate.Request request){
         return itemService.createItem(request);
     }
 
-    @DeleteMapping("/delete")
+    @DeleteMapping("/deleteItem")
     public ItemDelete.Response deleteItem(@RequestBody ItemDelete.Request request){
         return itemService.deleteItem(request);
     }

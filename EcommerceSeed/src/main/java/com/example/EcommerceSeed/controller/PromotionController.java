@@ -12,13 +12,15 @@ import org.springframework.web.bind.annotation.*;
 public class PromotionController {
     private final PromotionService promotionService;
 
-    @RequestMapping("/create")
+    @RequestMapping("/createPromotion")
     public PromotionCreate.Response createPromotion(@RequestBody PromotionCreate.Request request){
         return promotionService.createPromotion(request);
     }
 
-    @RequestMapping("/delete")
+    @RequestMapping("/deletePromotion")
     public PromotionDelete.Response deletePromotion(@RequestBody PromotionDelete.Request request){
         return promotionService.deletePromotion(request);
     }
+
+
 }
