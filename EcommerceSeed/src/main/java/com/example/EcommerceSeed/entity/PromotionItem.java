@@ -7,20 +7,28 @@ import javax.persistence.*;
 
 @Getter
 @Setter
+@Builder
 @Entity
 @Table
+@NoArgsConstructor
+@AllArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
-public class ItemPromotion {
+public class PromotionItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "promotion_id")
+    private Promotion promotion;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "item_id")
     private Item item;
 
-    @ManyToOne
-    @JoinColumn(name = "promotion_id")
-    private Promotion promotion;
+    public PromotionItem(Promotion promotion, Item item){
+        this.promotion = promotion;
+        this.item = item;
+    }
 }

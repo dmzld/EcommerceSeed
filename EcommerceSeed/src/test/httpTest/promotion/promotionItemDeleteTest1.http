@@ -1,0 +1,7 @@
+DELETE http://localhost:8080/promotion/deletePromotionItem
+Content-Type: application/json
+
+{
+  "promotionId" : 1,
+  "itemId" : 1
+}

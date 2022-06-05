@@ -1,4 +1,42 @@
-POST http://localhost:8080/item/create
+DELETE http://localhost:8080/promotion/deletePromotionItem
+Content-Type: application/json
+
+{
+  "promotionId" : 1,
+  "itemId" : 1
+}
+
+<> 2022-06-06T020310.200.json
+
+###
+
+POST http://localhost:8080/promotion/createPromotionItem
+Content-Type: application/json
+
+{
+  "promotionId" : 1,
+  "itemId" : 1
+}
+
+<> 2022-06-06T020257.200.json
+
+###
+
+POST http://localhost:8080/promotion/createPromotion
+Content-Type: application/json
+
+{
+  "promotionNm" : "2022 쓱데이",
+  "discountAmount" : 10000,
+  "promotionStartDate" : "2022-05-01",
+  "promotionEndDate" : "2022-07-03"
+}
+
+<> 2022-06-06T020253.200.json
+
+###
+
+POST http://localhost:8080/item/createItem
 Content-Type: application/json
 
 {
@@ -9,11 +47,71 @@ Content-Type: application/json
   "itemDisplayEndDate" : "2023-01-03"
 }
 
-<> 2022-06-05T015212.200.json
+<> 2022-06-06T020248.200.json
 
 ###
 
-POST http://localhost:8080/promotion/create
+DELETE http://localhost:8080/promotion/deletePromotionItem
+Content-Type: application/json
+
+{
+  "promotionId" : 1,
+  "itemId" : 1
+}
+
+<> 2022-06-06T020215.500.json
+
+###
+
+DELETE http://localhost:8080/promotion/deletePromotionItem
+Content-Type: application/json
+
+{
+  "promotionId" : 1,
+  "itemId" : 1
+}
+
+<> 2022-06-06T015828.500.json
+
+###
+
+DELETE http://localhost:8080/promotion/deletePromotionItem
+Content-Type: application/json
+
+{
+  "promotionId" : 1,
+  "itemId" : 1
+}
+
+<> 2022-06-06T015802.500.json
+
+###
+
+DELETE http://localhost:8080/promotion/createPromotionItem
+Content-Type: application/json
+
+{
+  "promotionId" : 1,
+  "itemId" : 1
+}
+
+<> 2022-06-06T015726.200.json
+
+###
+
+POST http://localhost:8080/promotion/createPromotionItem
+Content-Type: application/json
+
+{
+  "promotionId" : 1,
+  "itemId" : 1
+}
+
+<> 2022-06-06T015708.200.json
+
+###
+
+POST http://localhost:8080/promotion/createPromotion
 Content-Type: application/json
 
 {
@@ -23,97 +121,11 @@ Content-Type: application/json
   "promotionEndDate" : "2022-07-03"
 }
 
-<> 2022-06-05T015208.200.json
+<> 2022-06-06T015647.200.json
 
 ###
 
-POST http://localhost:8080/user/create
-Content-Type: application/json
-
-{
-  "userName" : "이수경",
-  "userType" : "일반",
-  "userStat" : "탈퇴"
-}
-
-<> 2022-06-05T015201.200.json
-
-###
-
-DELETE http://localhost:8080/promotion/delete
-Content-Type: application/json
-
-{
-  "promotionId": 1
-}
-
-<> 2022-06-05T003558.200.json
-
-###
-
-POST http://localhost:8080/promotion/create
-Content-Type: application/json
-
-{
-  "promotionNm" : "2022 쓱데이",
-  "discountAmount" : 10000,
-  "promotionStartDate" : "2022-05-01",
-  "promotionEndDate" : "2022-07-03"
-}
-
-<> 2022-06-05T003551.200.json
-
-###
-
-POST http://localhost:8080/promotion/create
-Content-Type: application/json
-
-{
-  "promotionNm" : "2022 쓱데이",
-  "discountAmount" : 10000,
-  "discountRate" : 0.05,
-  "promotionStartDate" : "2022-05-01",
-  "promotionEndDate" : "2022-07-03"
-}
-
-<> 2022-06-05T003537.200.json
-
-###
-
-DELETE http://localhost:8080/promotion/delete
-Content-Type: application/json
-
-{
-  "promotionId": 1
-}
-
-<> 2022-06-05T003532.500.json
-
-###
-
-DELETE http://localhost:8080/promotion/delete
-Content-Type: application/json
-
-{
-  "promotionId": 1
-}
-
-<> 2022-06-05T002829.404.json
-
-###
-
-DELETE http://localhost:8080/item/delete
-Content-Type: application/json
-
-{
-  "itemId": 1
-}
-
-<> 2022-06-04T234631.200.json
-
-###
-
-POST http://localhost:8080/item/create
+POST http://localhost:8080/item/createItem
 Content-Type: application/json
 
 {
@@ -124,57 +136,145 @@ Content-Type: application/json
   "itemDisplayEndDate" : "2023-01-03"
 }
 
-<> 2022-06-04T234531.200.json
+<> 2022-06-06T015639.200.json
 
 ###
 
-DELETE http://localhost:8080/item/delete
+DELETE http://localhost:8080/promotion/createPromotionItem
 Content-Type: application/json
 
 {
-  "itemId": 1
+  "promotionId" : 1,
+  "itemId" : 1
 }
 
-<> 2022-06-04T234519.500.json
+<> 2022-06-06T015623.500.json
 
 ###
 
-DELETE http://localhost:8080/user/delete
+POST http://localhost:8080/promotion/createPromotionItem
 Content-Type: application/json
 
 {
-  "userId": 1
+  "promotionId" : 1,
+  "itemId" : 1
 }
 
-<> 2022-06-04T225209.500.json
+<> 2022-06-06T014111.200.json
 
 ###
 
-POST http://localhost:8080/user/create
+POST http://localhost:8080/promotion/createPromotionItem
 Content-Type: application/json
 
 {
-  "userName" : "최상면",
-  "userType" : "기업회원",
-  "userStat" : "정상"
+  "promotionId" : 1,
+  "itemId" : 1
 }
 
-<> 2022-06-04T225202.200.json
+<> 2022-06-06T014059.200.json
 
 ###
 
-DELETE http://localhost:8080/user/delete
+POST http://localhost:8080/promotion/createPromotion
 Content-Type: application/json
 
 {
-  "userId": 1
+  "promotionNm" : "2022 쓱데이",
+  "discountAmount" : 10000,
+  "promotionStartDate" : "2022-05-01",
+  "promotionEndDate" : "2022-07-03"
 }
 
-<> 2022-06-04T225147.200.json
+<> 2022-06-06T014052.200.json
 
 ###
 
-POST http://localhost:8080/user/create
+POST http://localhost:8080/item/createItem
+Content-Type: application/json
+
+{
+  "itemName" : "노브랜드 버터링",
+  "itemType" : "일반",
+  "itemPrice" : 20000,
+  "itemDisplayStartDate" : "2022-01-01",
+  "itemDisplayEndDate" : "2023-01-03"
+}
+
+<> 2022-06-06T014048.200.json
+
+###
+
+DELETE http://localhost:8080/promotion/deletePromotion
+Content-Type: application/json
+
+{
+  "promotionId": 1
+}
+
+<> 2022-06-06T014015.500.json
+
+###
+
+DELETE http://localhost:8080/promotion/deletePromotion
+Content-Type: application/json
+
+{
+  "promotionId": 1
+}
+
+<> 2022-06-06T011456.200.json
+
+###
+
+POST http://localhost:8080/promotion/createPromotion
+Content-Type: application/json
+
+{
+  "promotionNm" : "2022 쓱데이",
+  "discountAmount" : 10000,
+  "promotionStartDate" : "2022-05-01",
+  "promotionEndDate" : "2022-07-03"
+}
+
+<> 2022-06-06T011452.200.json
+
+###
+
+DELETE http://localhost:8080/promotion/deletePromotion
+Content-Type: application/json
+
+{
+  "promotionId": 1
+}
+
+<> 2022-06-06T010503.500.json
+
+###
+
+DELETE http://localhost:8080/promotion/deletePromotion
+Content-Type: application/json
+
+{
+  "promotionId": 1
+}
+
+<> 2022-06-06T010443.500.json
+
+###
+
+DELETE http://localhost:8080/promotion/deletePromotion
+Content-Type: application/json
+
+{
+  "promotionId": 1
+}
+
+<> 2022-06-06T010348.500.json
+
+###
+
+POST http://localhost:8080/user/createUser
 Content-Type: application/json
 
 {
@@ -183,22 +283,232 @@ Content-Type: application/json
   "userStat" : "탈퇴"
 }
 
-<> 2022-06-04T225136.200.json
+<> 2022-06-06T010329.200.json
 
 ###
 
-POST http://localhost:8080/user/delete
+POST http://localhost:8080/promotion/createPromotionItem
 Content-Type: application/json
 
 {
-  "userId": 1
+  "promotionId" : 1,
+  "itemId" : 1
 }
-
-<> 2022-06-04T224958.405.json
 
 ###
 
-POST http://localhost:8080/user/create
+POST http://localhost:8080/promotion/createPromotion
+Content-Type: application/json
+
+{
+  "promotionNm" : "2022 쓱데이",
+  "discountAmount" : 10000,
+  "promotionStartDate" : "2022-05-01",
+  "promotionEndDate" : "2022-07-03"
+}
+
+<> 2022-06-06T010005.200.json
+
+###
+
+POST http://localhost:8080/item/createItem
+Content-Type: application/json
+
+{
+  "itemName" : "노브랜드 버터링",
+  "itemType" : "일반",
+  "itemPrice" : 20000,
+  "itemDisplayStartDate" : "2022-01-01",
+  "itemDisplayEndDate" : "2023-01-03"
+}
+
+<> 2022-06-06T010001.200.json
+
+###
+
+POST http://localhost:8080/promotion/createPromotionItem
+Content-Type: application/json
+
+{
+  "promotionId" : 1,
+  "itemId" : 1
+}
+
+###
+
+POST http://localhost:8080/promotion/createPromotionItem
+Content-Type: application/json
+
+{
+  "promotionId" : 1,
+  "itemId" : 1
+}
+
+###
+
+POST http://localhost:8080/promotion/createPromotionItem
+Content-Type: application/json
+
+{
+  "promotionId" : 1,
+  "itemId" : 1
+}
+
+###
+
+POST http://localhost:8080/promotion/createPromotionItem
+Content-Type: application/json
+
+{
+  "promotionId" : 1,
+  "itemId" : 1
+}
+
+###
+
+POST http://localhost:8080/promotion/createPromotion
+Content-Type: application/json
+
+{
+  "promotionNm" : "2022 쓱데이",
+  "discountAmount" : 10000,
+  "promotionStartDate" : "2022-05-01",
+  "promotionEndDate" : "2022-07-03"
+}
+
+<> 2022-06-05T182458.200.json
+
+###
+
+POST http://localhost:8080/item/createItem
+Content-Type: application/json
+
+{
+  "itemName" : "노브랜드 버터링",
+  "itemType" : "일반",
+  "itemPrice" : 20000,
+  "itemDisplayStartDate" : "2022-01-01",
+  "itemDisplayEndDate" : "2023-01-03"
+}
+
+<> 2022-06-05T182455.200.json
+
+###
+
+POST http://localhost:8080/promotion/createPromotionItem
+Content-Type: application/json
+
+{
+  "promotionId" : 1,
+  "itemId" : 1
+}
+
+<> 2022-06-05T182206.500.json
+
+###
+
+POST http://localhost:8080/promotion/createPromotionItem
+Content-Type: application/json
+
+{
+  "promotionId" : 1,
+  "itemId" : 1
+}
+
+<> 2022-06-05T182153.500.json
+
+###
+
+POST http://localhost:8080/promotion/createPromotionItem
+Content-Type: application/json
+
+{
+  "promotionId" : 1,
+  "itemId" : 1
+}
+
+<> 2022-06-05T182107.500.json
+
+###
+
+POST http://localhost:8080/promotion/createPromotionItem
+Content-Type: application/json
+
+{
+  "promotionId" : 1,
+  "itemId" : 1
+}
+
+<> 2022-06-05T181950.500.json
+
+###
+
+POST http://localhost:8080/promotion/createPromotionItem
+Content-Type: application/json
+
+{
+  "promotionId" : 1,
+  "itemId" : 1
+}
+
+<> 2022-06-05T181546.500.json
+
+###
+
+POST http://localhost:8080/promotion/createPromotionItem
+Content-Type: application/json
+
+{
+  "promotionId" : 1,
+  "itemId" : 1
+}
+
+<> 2022-06-05T181521.500.json
+
+###
+
+POST http://localhost:8080/promotion/createPromotion
+Content-Type: application/json
+
+{
+  "promotionNm" : "2022 쓱데이",
+  "discountAmount" : 10000,
+  "promotionStartDate" : "2022-05-01",
+  "promotionEndDate" : "2022-07-03"
+}
+
+<> 2022-06-05T181517.200.json
+
+###
+
+POST http://localhost:8080/item/createItem
+Content-Type: application/json
+
+{
+  "itemName" : "노브랜드 버터링",
+  "itemType" : "일반",
+  "itemPrice" : 20000,
+  "itemDisplayStartDate" : "2022-01-01",
+  "itemDisplayEndDate" : "2023-01-03"
+}
+
+<> 2022-06-05T181513.200.json
+
+###
+
+POST http://localhost:8080/promotion/createPromotionItem
+Content-Type: application/json
+
+{
+  "promotionId" : 1,
+  "itemId" : 1
+}
+
+<> 2022-06-05T181506.500.json
+
+###
+
+POST http://localhost:8080/user/createUser
 Content-Type: application/json
 
 {
@@ -207,98 +517,96 @@ Content-Type: application/json
   "userStat" : "탈퇴"
 }
 
-<> 2022-06-04T224944.200.json
+<> 2022-06-05T173438.200.json
 
 ###
 
-POST http://localhost:8080/user/create
+POST http://localhost:8080/promotion/createPromotionItem
 Content-Type: application/json
 
 {
-  "userId": 1
-}
-
-<> 2022-06-04T224725.200.json
-
-###
-
-POST http://localhost:8080/user/create
-Content-Type: application/json
-
-{
-  "userName" : "이수경",
-  "userType" : "일반",
-  "userStat" : "탈퇴"
-}
-
-<> 2022-06-04T222038.200.json
-
-###
-
-POST http://localhost:8080/user/create
-Content-Type: application/json
-
-{
-  "userName" : "이수경",
-  "userType" : "일반",
-  "userStat" : "탈퇴"
-}
-
-<> 2022-06-04T222028.200.json
-
-###
-
-POST http://localhost:8080/user/create
-Content-Type: application/json
-
-{
-  "userName" : "이수경",
-  "userType" : "일반",
-  "userStat" : "탈퇴"
+  "promotionId" : 1,
+  "itemId" : 1
 }
 
 ###
 
-POST http://localhost:8080/user/create
+DELETE http://localhost:8080/promotion/deletePromotion
 Content-Type: application/json
 
 {
-  "userName" : "이수경",
-  "userType" : "일반",
-  "userStat" : "탈퇴"
+  "promotionId": 1
+}
+
+<> 2022-06-05T173437.500.json
+
+###
+
+POST http://localhost:8080/promotion/createPromotion
+Content-Type: application/json
+
+{
+  "promotionNm" : "2022 쓱데이",
+  "discountAmount" : 10000,
+  "promotionStartDate" : "2022-05-01",
+  "promotionEndDate" : "2022-07-03"
+}
+
+<> 2022-06-05T173436.200.json
+
+###
+
+POST http://localhost:8080/item/createItem
+Content-Type: application/json
+
+{
+  "itemName" : "노브랜드 버터링",
+  "itemType" : "일반",
+  "itemPrice" : 20000,
+  "itemDisplayStartDate" : "2022-01-01",
+  "itemDisplayEndDate" : "2023-01-03"
+}
+
+<> 2022-06-05T173435.200.json
+
+###
+
+POST http://localhost:8080/promotion/createPromotionItem
+Content-Type: application/json
+
+{
+  "promotionId" : 1,
+  "itemId" : 1
 }
 
 ###
 
-POST http://localhost:8080/user/create
+POST http://localhost:8080/promotion/createPromotionItem
 Content-Type: application/json
 
 {
-  "userName" : "최상면",
-  "userType" : "기업회원",
-  "userStat" : "정상"
+  "promotionId" : 1,
+  "itemId" : 1
 }
 
 ###
 
-POST http://localhost:8080/user/create
+POST http://localhost:8080/promotion/createPromotionItem
 Content-Type: application/json
 
 {
-  "userName" : "최상면",
-  "userType" : "기업회원",
-  "userStat" : "정상"
+  "promotionId" : 1,
+  "itemId" : 1
 }
 
 ###
 
-POST http://localhost:8080/user/create
+POST http://localhost:8080/promotion/createPromotionItem
 Content-Type: application/json
 
 {
-  "userName" : "이수경",
-  "userType" : "일반",
-  "userStat" : "탈퇴"
+  "promotionId" : 1,
+  "itemId" : 1
 }
 
 ###

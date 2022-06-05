@@ -30,5 +30,5 @@ public class Promotion {
     private Date promotionEndDate;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "promotion")
-    private List<promotionItem> promotionItems = new ArrayList<>();
+    private List<PromotionItem> promotionItems = new ArrayList<>();
 }
