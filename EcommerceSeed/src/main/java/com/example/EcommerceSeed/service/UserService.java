@@ -48,17 +48,23 @@ public class UserService {
     }
 
     @Transactional
-    public UserSelectItemList.Response selectUserItemList(UserSelectItemList.Request reqeust){
-        User user = userRepository.findById(reqeust.getUserId()).orElse(null);
+    public List<UserSelectItemList.Response> selectUserItemList(UserSelectItemList.Request request){
+        User user = userRepository.findById(request.getUserId()).orElse(null);
 
-        List<Item> dummy = new ArrayList<>();
+        List<Item> dummyList = new ArrayList<>();
+        List<UserSelectItemList.Response> responseList = new ArrayList<>();
         if(user == null || user.getUserStat().equals("탈퇴")){
-            return UserSelectItemList.Response.fromEntity(dummy);
+            for(Item dummy : dummyList){
+                responseList.add(UserSelectItemList.Response.fromEntity(dummy));
+            }
+            return responseList;
         }
         else{
-            List<Item> itemList = itemRepository.findItemsByItemType(user.getUserType().equals("일반")?"일반":"기업회원상품", java.sql.Timestamp.valueOf(LocalDateTime.now()));
-            System.out.println(itemList.toString());
-            return UserSelectItemList.Response.fromEntity(itemList);
+            List<Item> itemList = itemRepository.findItemsByItemTypeAndNowBetweenItemDisplayStartDateAndItemDisplayEndDate(user.getUserType().equals("일반")?"일반":"기업회원상품", java.sql.Timestamp.valueOf(LocalDateTime.now()));
+            for(Item item : itemList){
+                responseList.add(UserSelectItemList.Response.fromEntity(item));
+            }
+            return responseList;
         }
     }
 }

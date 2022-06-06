@@ -1,0 +1,6 @@
+GET http://localhost:8080/item/selectItemPromotionList
+Content-Type: application/json
+
+{
+  "itemId": 1
+}

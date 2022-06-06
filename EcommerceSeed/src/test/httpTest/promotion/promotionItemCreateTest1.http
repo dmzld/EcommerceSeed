@@ -2,6 +2,6 @@ POST http://localhost:8080/promotion/createPromotionItem
 Content-Type: application/json
 
 {
-  "promotionId" : 1,
+  "promotionId" : 5,
   "itemId" : 1
 }

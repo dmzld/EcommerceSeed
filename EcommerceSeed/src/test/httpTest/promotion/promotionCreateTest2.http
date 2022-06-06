@@ -1,0 +1,9 @@
+POST http://localhost:8080/promotion/createPromotion
+Content-Type: application/json
+
+{
+  "promotionNm" : "스타벅스몰 오픈기념",
+  "discountRate" : 0.05,
+  "promotionStartDate" : "2021-01-01",
+  "promotionEndDate" : "2022-12-31"
+}

@@ -2,6 +2,7 @@ package com.example.EcommerceSeed.controller;
 
 import com.example.EcommerceSeed.dto.ItemCreate;
 import com.example.EcommerceSeed.dto.ItemDelete;
+import com.example.EcommerceSeed.dto.ItemSelectPromotionList;
 import com.example.EcommerceSeed.dto.UserCreate;
 import com.example.EcommerceSeed.service.ItemService;
 import lombok.RequiredArgsConstructor;
@@ -21,5 +22,10 @@ public class ItemController {
     @DeleteMapping("/deleteItem")
     public ItemDelete.Response deleteItem(@RequestBody ItemDelete.Request request){
         return itemService.deleteItem(request);
+    }
+
+    @GetMapping("/selectItemPromotionList")
+    public ItemSelectPromotionList.Response selectItemPromotionList(@RequestBody ItemSelectPromotionList.Request request){
+        return itemService.selectItemPromotionList(request);
     }
 }

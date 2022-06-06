@@ -20,7 +20,6 @@ public class PromotionCreate {
         private String promotionNm;
         private Long discountAmount;
         private Double discountRate;
-
         private Date promotionStartDate;
         private Date promotionEndDate;
 
@@ -44,7 +43,6 @@ public class PromotionCreate {
         private String promotionNm;
         private Long discountAmount;
         private Double discountRate;
-
         private Date promotionStartDate;
         private Date promotionEndDate;
 

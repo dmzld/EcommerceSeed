@@ -2,5 +2,5 @@ GET http://localhost:8080/user/selectUserItemList
 Content-Type: application/json
 
 {
-  "userId": 2
+  "userId": 4
 }

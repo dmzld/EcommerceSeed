@@ -25,6 +25,7 @@ public class Item {
 
     private String itemName;
     private String itemType;
+    private Long itemPrice;
 
     private Date itemDisplayStartDate;
     private Date itemDisplayEndDate;

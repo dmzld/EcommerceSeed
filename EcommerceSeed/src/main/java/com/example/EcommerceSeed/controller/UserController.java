@@ -8,6 +8,8 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/user")
 @RequiredArgsConstructor
@@ -25,7 +27,7 @@ public class UserController {
     }
 
     @GetMapping("/selectUserItemList")
-    public UserSelectItemList.Response selectUserItemList(@RequestBody UserSelectItemList.Request request){
+    public List<UserSelectItemList.Response> selectUserItemList(@RequestBody UserSelectItemList.Request request){
         return userService.selectUserItemList(request);
     }
 }

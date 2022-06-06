@@ -46,7 +46,6 @@ public class ItemCreate {
         private String itemName;
         private String itemType;
         private Long itemPrice;
-
         private Date itemDisplayStartDate;
         private Date itemDisplayEndDate;
 
@@ -54,7 +53,7 @@ public class ItemCreate {
             return Response.builder()
                     .itemName(item.getItemName())
                     .itemType(item.getItemType())
-                    .itemPrice(item.getItemId())
+                    .itemPrice(item.getItemPrice())
                     .itemDisplayStartDate(item.getItemDisplayStartDate())
                     .itemDisplayEndDate(item.getItemDisplayEndDate())
                     .build();

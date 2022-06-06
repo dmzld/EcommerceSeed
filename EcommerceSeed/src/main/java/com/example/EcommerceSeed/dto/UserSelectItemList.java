@@ -4,6 +4,7 @@ import com.example.EcommerceSeed.entity.Item;
 import lombok.*;
 
 import javax.validation.constraints.NotBlank;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -31,12 +32,22 @@ public class UserSelectItemList {
     @NoArgsConstructor
     @Builder
     public static class Response{
-        private List<Item> itemList;
+        private Long itemId;
+        private String itemName;
+        private String itemType;
+        private Long itemPrice;
+        private Date itemDisplayStartDate;
+        private Date itemDisplayEndDate;
 
-        public static Response fromEntity(List<Item> itemList){
+        public static Response fromEntity(Item item){
             return Response.builder()
-                    .itemList(itemList)
-                    .build();
+                        .itemId(item.getItemId())
+                        .itemName(item.getItemName())
+                        .itemType(item.getItemType())
+                        .itemPrice(item.getItemPrice())
+                        .itemDisplayStartDate(item.getItemDisplayStartDate())
+                        .itemDisplayEndDate(item.getItemDisplayEndDate())
+                        .build();
         }
     }
 }
