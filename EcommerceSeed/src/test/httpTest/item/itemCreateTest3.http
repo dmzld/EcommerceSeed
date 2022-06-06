@@ -1,0 +1,10 @@
+POST http://localhost:8080/item/createItem
+Content-Type: application/json
+
+{
+  "itemName" : "나이키 운동화",
+  "itemType" : "기업회원상품",
+  "itemPrice" : 40000,
+  "itemDisplayStartDate" : "2020-01-01",
+  "itemDisplayEndDate" : "2023-12-31"
+}

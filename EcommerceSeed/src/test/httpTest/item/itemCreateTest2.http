@@ -1,0 +1,10 @@
+POST http://localhost:8080/item/createItem
+Content-Type: application/json
+
+{
+  "itemName" : "매일 아침 우유",
+  "itemType" : "일반",
+  "itemPrice" : 1000,
+  "itemDisplayStartDate" : "2022-01-01",
+  "itemDisplayEndDate" : "2022-05-01"
+}

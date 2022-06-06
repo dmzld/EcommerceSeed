@@ -1,0 +1,8 @@
+POST http://localhost:8080/user/createUser
+Content-Type: application/json
+
+{
+  "userName" : "강재석",
+  "userType" : "일반",
+  "userStat" : "정상"
+}

@@ -2,7 +2,9 @@ package com.example.EcommerceSeed.controller;
 
 import com.example.EcommerceSeed.dto.UserCreate;
 import com.example.EcommerceSeed.dto.UserDelete;
+import com.example.EcommerceSeed.dto.UserSelectItemList;
 import com.example.EcommerceSeed.service.UserService;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,5 +22,10 @@ public class UserController {
     @DeleteMapping("/deleteUser")
     public UserDelete.Response deleteUser(@RequestBody UserDelete.Request request){
         return userService.deleteUser(request);
+    }
+
+    @GetMapping("/selectUserItemList")
+    public UserSelectItemList.Response selectUserItemList(@RequestBody UserSelectItemList.Request request){
+        return userService.selectUserItemList(request);
     }
 }
