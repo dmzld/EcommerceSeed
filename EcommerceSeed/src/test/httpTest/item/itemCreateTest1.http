@@ -2,9 +2,9 @@ POST http://localhost:8080/item/createItem
 Content-Type: application/json
 
 {
-  "itemName" : "노브랜드 버터링",
+  "itemName" : "노브랜드 버터링1",
   "itemType" : "일반",
-  "itemPrice" : 20000,
+  "itemPrice" : 30000,
   "itemDisplayStartDate" : "2022-01-01",
   "itemDisplayEndDate" : "2023-01-03"
 }

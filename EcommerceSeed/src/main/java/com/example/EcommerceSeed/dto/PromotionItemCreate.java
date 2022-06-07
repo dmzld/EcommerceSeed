@@ -5,6 +5,8 @@ import com.example.EcommerceSeed.entity.Promotion;
 import com.example.EcommerceSeed.entity.PromotionItem;
 import lombok.*;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 public class PromotionItemCreate {
@@ -16,7 +18,9 @@ public class PromotionItemCreate {
     @Builder
     @ToString
     public static class Request{
+        @NotNull
         private Long promotionId;
+        @NotNull
         private Long itemId;
 
         public Request toEntity(){

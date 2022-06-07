@@ -4,6 +4,7 @@ import com.example.EcommerceSeed.entity.User;
 import lombok.*;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 public class UserDelete {
 
@@ -14,7 +15,7 @@ public class UserDelete {
     @Builder
     @ToString
     public static class Request{
-        @NotBlank(message = "userId을 확인해주세요.")
+        @NotNull
         private Long userId;
 
         public Request toEntity(){

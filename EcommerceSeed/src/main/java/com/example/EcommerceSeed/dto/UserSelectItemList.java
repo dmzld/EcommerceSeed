@@ -4,6 +4,7 @@ import com.example.EcommerceSeed.entity.Item;
 import lombok.*;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -17,6 +18,7 @@ public class UserSelectItemList {
     @Builder
     @ToString
     public static class Request{
+        @NotNull
         private Long userId;
 
         public Request toEntity(){

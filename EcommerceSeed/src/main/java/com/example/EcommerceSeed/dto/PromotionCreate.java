@@ -5,6 +5,7 @@ import com.example.EcommerceSeed.entity.Promotion;
 import lombok.*;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 public class PromotionCreate {
@@ -16,11 +17,13 @@ public class PromotionCreate {
     @Builder
     @ToString
     public static class Request{
-        @NotBlank(message = "promotionName을 확인해주세요.")
+        @NotBlank
         private String promotionNm;
         private Long discountAmount;
         private Double discountRate;
+        @NotNull
         private Date promotionStartDate;
+        @NotNull
         private Date promotionEndDate;
 
         public Request toEntity(){

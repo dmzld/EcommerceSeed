@@ -2,6 +2,9 @@ package com.example.EcommerceSeed.dto;
 
 import lombok.*;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 public class PromotionItemDelete {
 
     @Getter
@@ -11,7 +14,9 @@ public class PromotionItemDelete {
     @Builder
     @ToString
     public static class Request{
+        @NotNull
         private Long promotionId;
+        @NotNull
         private Long itemId;
 
         public Request toEntity(){

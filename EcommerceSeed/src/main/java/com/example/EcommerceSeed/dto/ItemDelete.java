@@ -3,6 +3,7 @@ package com.example.EcommerceSeed.dto;
 import lombok.*;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 public class ItemDelete {
 
@@ -13,7 +14,7 @@ public class ItemDelete {
     @Builder
     @ToString
     public static class Request{
-        @NotBlank(message = "itemId을 확인해주세요.")
+        @NotNull
         private Long itemId;
 
         public Request toEntity(){

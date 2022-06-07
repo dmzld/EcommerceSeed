@@ -14,11 +14,11 @@ public class UserCreate {
     @Builder
     @ToString
     public static class Request{
-        @NotBlank(message = "userName을 확인해주세요.")
+        @NotBlank
         private String userName;
-        @NotBlank(message = "userType을 확인해주세요.")
+        @NotBlank
         private String userType;
-        @NotBlank(message = "userStat을 확인해주세요.")
+        @NotBlank
         private String userStat;
 
         public Request toEntity(){

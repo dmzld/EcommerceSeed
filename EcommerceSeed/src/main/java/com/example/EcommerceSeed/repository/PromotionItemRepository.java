@@ -16,10 +16,12 @@ import java.util.Optional;
 public interface PromotionItemRepository extends JpaRepository<PromotionItem, Long> {
 
     @Query(value = "SELECT * FROM PROMOTION_ITEM WHERE PROMOTION_ITEM.PROMOTION_ID = :promotionId AND PROMOTION_ITEM.ITEM_ID = :itemId", nativeQuery = true)
-    public PromotionItem existsByPromotionIdAndItemId(Long promotionId, Long itemId);
+    public Optional<PromotionItem> existsByPromotionIdAndItemId(Long promotionId, Long itemId);
 
-    @Modifying
-    @Query(value = "DELETE FROM PROMOTION_ITEM WHERE PROMOTION_ITEM.PROMOTION_ID = :promotionId AND PROMOTION_ITEM.ITEM_ID = :itemId", nativeQuery = true)
-    public void deletePromotionItemByPromotionIdAndItemId(Long promotionId, Long itemId);
+    @Query(value = "SELECT * FROM PROMOTION_ITEM WHERE PROMOTION_ITEM.ITEM_ID = :itemId", nativeQuery = true)
+    public Optional<PromotionItem> findByItemId(Long itemId);
+
+    @Query(value = "SELECT * FROM PROMOTION_ITEM WHERE PROMOTION_ITEM.PROMOTION_ID = :promotionId", nativeQuery = true)
+    public Optional<PromotionItem> findByPromotionId(Long promotionId);
 
 }

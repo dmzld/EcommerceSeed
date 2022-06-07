@@ -5,6 +5,7 @@ import com.example.EcommerceSeed.entity.User;
 import lombok.*;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 public class ItemCreate {
@@ -16,14 +17,15 @@ public class ItemCreate {
     @Builder
     @ToString
     public static class Request{
-        @NotBlank(message = "itemName을 확인해주세요.")
+        @NotBlank
         private String itemName;
-        @NotBlank(message = "itemType을 확인해주세요.")
+        @NotBlank
         private String itemType;
-        @NotBlank(message = "itemPrice을 확인해주세요.")
+        @NotNull
         private Long itemPrice;
-
+        @NotNull
         private Date itemDisplayStartDate;
+        @NotNull
         private Date itemDisplayEndDate;
 
         public Request toEntity(){

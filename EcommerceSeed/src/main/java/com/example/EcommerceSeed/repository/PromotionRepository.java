@@ -7,9 +7,10 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface PromotionRepository extends JpaRepository<Promotion, Long> {
     @Query(value = "SELECT B.* FROM PROMOTION_ITEM A, PROMOTION B WHERE A.ITEM_ID = :itemId AND A.PROMOTION_ID = B.PROMOTION_ID AND :now BETWEEN B.PROMOTION_START_DATE AND B.PROMOTION_END_DATE", nativeQuery = true)
-    public List<Promotion> selectItemPromotionByItemIdAndNowBetweenPromotionStartDateAndPromotionEndDate(Long itemId, Date now);
+    public Optional<List<Promotion>> selectItemPromotionByItemIdAndNowBetweenPromotionStartDateAndPromotionEndDate(Long itemId, Date now);
 }

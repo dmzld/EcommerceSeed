@@ -5,6 +5,7 @@ import com.example.EcommerceSeed.entity.Promotion;
 import lombok.*;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 public class ItemSelectPromotionList {
@@ -16,7 +17,7 @@ public class ItemSelectPromotionList {
     @Builder
     @ToString
     public static class Request{
-
+        @NotNull
         private Long itemId;
 
         public Request toEntity(){

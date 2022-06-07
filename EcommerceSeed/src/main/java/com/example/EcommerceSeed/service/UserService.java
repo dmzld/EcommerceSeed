@@ -4,13 +4,12 @@ import com.example.EcommerceSeed.dto.UserCreate;
 import com.example.EcommerceSeed.dto.UserDelete;
 import com.example.EcommerceSeed.dto.UserSelectItemList;
 import com.example.EcommerceSeed.entity.Item;
-import com.example.EcommerceSeed.entity.Promotion;
 import com.example.EcommerceSeed.entity.User;
-import com.example.EcommerceSeed.exception.UserException;
+import com.example.EcommerceSeed.exception.InvalidRequestException;
 import com.example.EcommerceSeed.repository.ItemRepository;
 import com.example.EcommerceSeed.repository.PromotionRepository;
 import com.example.EcommerceSeed.repository.UserRepository;
-import com.example.EcommerceSeed.type.UserErrorCode;
+import com.example.EcommerceSeed.util.MessageUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -28,43 +27,38 @@ public class UserService {
 
     @Transactional
     public UserCreate.Response createUser(UserCreate.Request request){
-        // validate
-
-        User user = User.builder()
+        return UserCreate.Response.fromEntity(userRepository.save(User.builder()
                 .userName(request.getUserName())
                 .userType(request.getUserType())
                 .userStat(request.getUserStat())
-                .build();
-
-        return UserCreate.Response.fromEntity(userRepository.save(user));
+                .build()));
     }
 
     @Transactional
     public UserDelete.Response deleteUser(UserDelete.Request request){
         userRepository.delete(
-                userRepository.findById(request.getUserId()).orElseThrow(() -> new UserException(UserErrorCode.CANNOT_FIND_USER))
-        );
+                userRepository.findById(request.getUserId())
+                        .orElseThrow(() -> new InvalidRequestException(MessageUtils.CANNOT_FIND_USER_ID)));
         return UserDelete.Response.fromEntity(request.getUserId());
     }
 
     @Transactional
     public List<UserSelectItemList.Response> selectUserItemList(UserSelectItemList.Request request){
-        User user = userRepository.findById(request.getUserId()).orElse(null);
+        User user = userRepository.findById(request.getUserId())
+                .orElseThrow(() -> new InvalidRequestException(MessageUtils.CANNOT_FIND_USER_ID));
 
-        List<Item> dummyList = new ArrayList<>();
         List<UserSelectItemList.Response> responseList = new ArrayList<>();
         if(user == null || user.getUserStat().equals("탈퇴")){
-            for(Item dummy : dummyList){
-                responseList.add(UserSelectItemList.Response.fromEntity(dummy));
-            }
-            return responseList;
+            throw new InvalidRequestException(MessageUtils.INVALID_USER_STAT);
         }
         else{
-            List<Item> itemList = itemRepository.findItemsByItemTypeAndNowBetweenItemDisplayStartDateAndItemDisplayEndDate(user.getUserType().equals("일반")?"일반":"기업회원상품", java.sql.Timestamp.valueOf(LocalDateTime.now()));
+            List<Item> itemList = itemRepository
+                    .findItemsByItemTypeAndNowBetweenItemDisplayStartDateAndItemDisplayEndDate(user.getUserType().equals("일반")?"일반":"기업회원상품", java.sql.Timestamp.valueOf(LocalDateTime.now()))
+                    .orElseThrow(() -> new InvalidRequestException(MessageUtils.NO_ITEM_SEARCHED));
             for(Item item : itemList){
                 responseList.add(UserSelectItemList.Response.fromEntity(item));
             }
-            return responseList;
         }
+        return responseList;
     }
 }
