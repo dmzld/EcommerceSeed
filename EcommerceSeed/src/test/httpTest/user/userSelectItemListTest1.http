@@ -1,6 +1,2 @@
-GET http://localhost:8080/user/selectUserItemList
+GET http://localhost:8080/user/selectUserItemList?userId=4
 Content-Type: application/json
-
-{
-  "userId": 4
-}

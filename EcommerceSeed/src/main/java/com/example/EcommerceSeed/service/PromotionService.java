@@ -24,8 +24,18 @@ public class PromotionService {
     private final ItemRepository itemRepository;
     private final PromotionItemRepository promotionItemRepository;
 
+    /*
+     * 프로모션 생성
+     * 1. 할인정액, 할인정률 입력값 validation
+     * 2. 프로모션 생성
+     * 3. return 생성된 프로모션
+     */
     @Transactional
     public PromotionCreate.Response createPromotion(PromotionCreate.Request request){
+        if(request.getDiscountAmount() == null && request.getDiscountRate() == null){
+            throw new InvalidRequestException(MessageUtils.NO_PROMOTION_DISCOUNT_VALUE);
+        }
+
        return PromotionCreate.Response.fromEntity(promotionRepository.save(
                Promotion.builder()
                        .promotionNm(request.getPromotionNm())
@@ -37,6 +47,13 @@ public class PromotionService {
        ));
     }
 
+    /*
+     * 프로모션 삭제
+     * 1. 프로모션 조회
+     * 2. 프로모션 적용된 상품 조회
+     * 3. 프로모션 삭제
+     * 4. return 삭제된 프로모션 ID
+     */
     @Transactional
     public PromotionDelete.Response deletePromotion(PromotionDelete.Request request){
         promotionRepository.findById(request.getPromotionId())
@@ -50,6 +67,13 @@ public class PromotionService {
         return PromotionDelete.Response.fromEntity(request.getPromotionId());
     }
 
+    /*
+     * 프로모션 상품 적용 내역 생성
+     * 1. 요청된 프로모션 상품 기적용 여부 조회
+     * 2. 프로모션, 상품 조회
+     * 3. 프로모션 상품 적용 내역 생성
+     * 4. return 생성된 프로모션 상품 적용 내역의 프로모션ID, 상품ID
+     */
     @Transactional
     public PromotionItemCreate.Response createPromotionItem(PromotionItemCreate.Request request){
         if(promotionItemRepository.existsByPromotionIdAndItemId(request.getPromotionId(), request.getItemId()).isPresent()){
@@ -65,6 +89,11 @@ public class PromotionService {
         return PromotionItemCreate.Response.fromEntity(promotionItem.getPromotion().getPromotionId(), promotionItem.getItem().getItemId());
     }
 
+    /*
+     * 프로모션 상품 적용 내역 삭제
+     * 1. 프로모선 상품 적용 내역 조회 및 삭제
+     * 2. return 삭제된 프로모션 상품 적용 내역의 프로모션ID, 상품ID
+     */
     @Transactional
     public PromotionItemDelete.Response deletePromotionItem(PromotionItemDelete.Request request){
         promotionItemRepository.delete(promotionItemRepository.existsByPromotionIdAndItemId(request.getPromotionId(), request.getItemId())

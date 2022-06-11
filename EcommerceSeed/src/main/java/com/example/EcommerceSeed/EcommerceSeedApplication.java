@@ -8,6 +8,8 @@ public class EcommerceSeedApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(EcommerceSeedApplication.class, args);
+
+
 	}
 
 }

@@ -14,14 +14,8 @@ public class ItemDelete {
     @Builder
     @ToString
     public static class Request{
-        @NotNull
+        @NotNull(message = "상품 아이디를 입력해주세요.")
         private Long itemId;
-
-        public Request toEntity(){
-            return Request.builder()
-                    .itemId(itemId)
-                    .build();
-        }
     }
 
     @Getter

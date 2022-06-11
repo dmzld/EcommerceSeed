@@ -17,24 +17,14 @@ public class PromotionCreate {
     @Builder
     @ToString
     public static class Request{
-        @NotBlank
+        @NotBlank(message = "프로모션 이름을 입력해주세요.")
         private String promotionNm;
         private Long discountAmount;
         private Double discountRate;
-        @NotNull
+        @NotNull(message = "프로모션 시작일을 입력해주세요.")
         private Date promotionStartDate;
-        @NotNull
+        @NotNull(message = "프로모션 종료일을 입력해주세요.")
         private Date promotionEndDate;
-
-        public Request toEntity(){
-            return Request.builder()
-                    .promotionNm(promotionNm)
-                    .discountAmount(discountAmount)
-                    .discountRate(discountRate)
-                    .promotionStartDate(promotionStartDate)
-                    .promotionEndDate(promotionStartDate)
-                    .build();
-        }
     }
 
     @Getter

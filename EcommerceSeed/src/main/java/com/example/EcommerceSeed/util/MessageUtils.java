@@ -15,4 +15,5 @@ public class MessageUtils {
     public static final String INVALID_USER_STAT = "탈퇴한 회원은 이용할 수 없습니다.";
     public static final String NO_PROMOTION_APPLIED = "적용된 프로모션이 없습니다.";
     public static final String NO_ITEM_SEARCHED = "조회 가능한 상품이 없습니다.";
+    public static final String NO_PROMOTION_DISCOUNT_VALUE = "프로모션 할인액과 할인율이 둘다 설정되지 않았습니다.";
 }

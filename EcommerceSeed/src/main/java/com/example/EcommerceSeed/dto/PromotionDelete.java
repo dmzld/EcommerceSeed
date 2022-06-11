@@ -14,14 +14,8 @@ public class PromotionDelete {
     @Builder
     @ToString
     public static class Request{
-        @NotNull
+        @NotNull(message = "프로모션 아이디를 입력해주세요.")
         private Long promotionId;
-
-        public Request toEntity(){
-            return Request.builder()
-                    .promotionId(promotionId)
-                    .build();
-        }
     }
 
     @Getter

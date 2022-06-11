@@ -20,22 +20,22 @@ import java.util.Map;
 public class PromotionController {
     private final PromotionService promotionService;
 
-    @RequestMapping("/createPromotion")
+    @PostMapping("/createPromotion")
     public DataResponse<PromotionCreate.Response> createPromotion(@RequestBody @Valid PromotionCreate.Request request){
         return new DataResponse(promotionService.createPromotion(request));
     }
 
-    @RequestMapping("/deletePromotion")
+    @DeleteMapping("/deletePromotion")
     public DataResponse<PromotionDelete.Response> deletePromotion(@RequestBody @Valid PromotionDelete.Request request){
         return new DataResponse(promotionService.deletePromotion(request));
     }
 
-    @RequestMapping("/createPromotionItem")
+    @PostMapping("/createPromotionItem")
     public DataResponse<PromotionItemCreate.Response> createPromotionItem(@RequestBody @Valid PromotionItemCreate.Request request){
         return new DataResponse(promotionService.createPromotionItem(request));
     }
 
-    @RequestMapping("/deletePromotionItem")
+    @DeleteMapping("/deletePromotionItem")
     public DataResponse<PromotionItemDelete.Response> deletePromotionItem(@RequestBody @Valid PromotionItemDelete.Request request){
         return new DataResponse(promotionService.deletePromotionItem(request));
     }

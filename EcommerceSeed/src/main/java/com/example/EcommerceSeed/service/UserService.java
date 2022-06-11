@@ -25,6 +25,11 @@ public class UserService {
     private final ItemRepository itemRepository;
     private final PromotionRepository promotionRepository;
 
+    /*
+     * 사용자 생성
+     * 1. 사용자 생성
+     * 2. return 생성된 사용자
+     */
     @Transactional
     public UserCreate.Response createUser(UserCreate.Request request){
         return UserCreate.Response.fromEntity(userRepository.save(User.builder()
@@ -34,6 +39,11 @@ public class UserService {
                 .build()));
     }
 
+    /*
+     * 사용자 삭제
+     * 1. 사용자 조회 및 삭제
+     * 2. return 삭제된 사용자 ID
+     */
     @Transactional
     public UserDelete.Response deleteUser(UserDelete.Request request){
         userRepository.delete(
@@ -42,6 +52,13 @@ public class UserService {
         return UserDelete.Response.fromEntity(request.getUserId());
     }
 
+    /*
+     * 사용자가 구매할 수 있는 상품
+     * 1. 사용자 조회
+     * 2. 사용자 type validation
+     * 3. 구매할 수 있는 상품 조회
+     * 4. return 사용자가 구매할 수 있는 상품 리스트
+     */
     @Transactional
     public List<UserSelectItemList.Response> selectUserItemList(UserSelectItemList.Request request){
         User user = userRepository.findById(request.getUserId())
@@ -53,8 +70,11 @@ public class UserService {
         }
         else{
             List<Item> itemList = itemRepository
-                    .findItemsByItemTypeAndNowBetweenItemDisplayStartDateAndItemDisplayEndDate(user.getUserType().equals("일반")?"일반":"기업회원상품", java.sql.Timestamp.valueOf(LocalDateTime.now()))
-                    .orElseThrow(() -> new InvalidRequestException(MessageUtils.NO_ITEM_SEARCHED));
+                    .findItemsByItemTypeAndNowBetweenItemDisplayStartDateAndItemDisplayEndDate(user.getUserType().equals("일반")?"일반":"기업회원상품", java.sql.Timestamp.valueOf(LocalDateTime.now()));
+
+            if(itemList.isEmpty()){
+                throw new InvalidRequestException(MessageUtils.NO_ITEM_SEARCHED);
+            }
             for(Item item : itemList){
                 responseList.add(UserSelectItemList.Response.fromEntity(item));
             }

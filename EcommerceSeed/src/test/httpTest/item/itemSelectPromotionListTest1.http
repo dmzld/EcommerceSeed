@@ -1,6 +1,2 @@
-GET http://localhost:8080/item/selectItemPromotionList
+GET http://localhost:8080/item/selectItemPromotionList?itemId=1
 Content-Type: application/json
-
-{
-  "itemId": 5
-}

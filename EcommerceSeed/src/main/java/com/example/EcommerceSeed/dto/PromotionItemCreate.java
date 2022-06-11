@@ -18,17 +18,10 @@ public class PromotionItemCreate {
     @Builder
     @ToString
     public static class Request{
-        @NotNull
+        @NotNull(message = "프로모션 아이디를 입력해주세요.")
         private Long promotionId;
-        @NotNull
+        @NotNull(message = "상품 아이디를 입력해주세요.")
         private Long itemId;
-
-        public Request toEntity(){
-            return Request.builder()
-                    .itemId(itemId)
-                    .promotionId(promotionId)
-                    .build();
-        }
     }
 
     @Getter

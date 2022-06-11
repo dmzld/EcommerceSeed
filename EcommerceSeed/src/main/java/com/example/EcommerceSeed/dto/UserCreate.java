@@ -14,20 +14,12 @@ public class UserCreate {
     @Builder
     @ToString
     public static class Request{
-        @NotBlank
+        @NotBlank(message = "사용자 이름을 입력해주세요.")
         private String userName;
-        @NotBlank
+        @NotBlank(message = "사용자 타입을 입력해주세요.")
         private String userType;
-        @NotBlank
+        @NotBlank(message = "사용자 상태를 입력해주세요.")
         private String userStat;
-
-        public Request toEntity(){
-            return Request.builder()
-                    .userName(userName)
-                    .userType(userType)
-                    .userStat(userStat)
-                    .build();
-        }
     }
 
     @Getter

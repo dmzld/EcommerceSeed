@@ -17,26 +17,16 @@ public class ItemCreate {
     @Builder
     @ToString
     public static class Request{
-        @NotBlank
+        @NotBlank(message = "상품 이름을 입력해주세요.")
         private String itemName;
-        @NotBlank
+        @NotBlank(message = "상품 타입을 입력해주세요.")
         private String itemType;
-        @NotNull
+        @NotNull(message = "상품 가격을 입력해주세요.")
         private Long itemPrice;
-        @NotNull
+        @NotNull(message = "상품 전시 시작일을 입력해주세요.")
         private Date itemDisplayStartDate;
-        @NotNull
+        @NotNull(message = "상품 전시 종료일을 입력해주세요.")
         private Date itemDisplayEndDate;
-
-        public Request toEntity(){
-            return Request.builder()
-                    .itemName(itemName)
-                    .itemType(itemType)
-                    .itemPrice(itemPrice)
-                    .itemDisplayStartDate(itemDisplayStartDate)
-                    .itemDisplayEndDate(itemDisplayEndDate)
-                    .build();
-        }
     }
 
     @Getter

@@ -28,7 +28,7 @@ public class ItemController {
     }
 
     @GetMapping("/selectItemPromotionList")
-    public DataResponse<ItemSelectPromotionList.Response> selectItemPromotionList(@RequestBody @Valid ItemSelectPromotionList.Request request){
+    public DataResponse<ItemSelectPromotionList.Response> selectItemPromotionList(@Valid ItemSelectPromotionList.Request request){
         return new DataResponse(itemService.selectItemPromotionList(request));
     }
 }

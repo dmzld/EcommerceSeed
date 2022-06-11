@@ -24,6 +24,11 @@ public class ItemService {
     private final PromotionItemRepository promotionItemRepository;
     private final PromotionRepository promotionRepository;
 
+    /*
+     * 상품생성
+     * 1. 상품 생성
+     * 2. return 생성된 상품
+     */
     @Transactional
     public ItemCreate.Response createItem(ItemCreate.Request request){
         return ItemCreate.Response.fromEntity(itemRepository.save(
@@ -37,6 +42,13 @@ public class ItemService {
         ));
     }
 
+    /*
+     * 상품삭제
+     * 1. 상품 조회
+     * 2. 상품에등록된프로모션조회
+     * 3. 상품삭제
+     * 4. return 삭제된 상품 ID
+     */
     @Transactional
     public ItemDelete.Response deleteItem(ItemDelete.Request request){
         itemRepository.findById(request.getItemId())
@@ -50,6 +62,12 @@ public class ItemService {
         return ItemDelete.Response.fromEntity(request.getItemId());
     }
 
+    /*
+     * 상품 프로모션 적용 내역 조회
+     * 1. 상품 조회
+     * 2. 상품에 등록된 프로모션 조회
+     * 3. return 상품, 적용 프로모션, 프로모션 적용 결과
+     */
     @Transactional
     public ItemSelectPromotionList.Response selectItemPromotionList(ItemSelectPromotionList.Request request){
         Item item = itemRepository.findById(request.getItemId())
@@ -60,13 +78,13 @@ public class ItemService {
                         .selectItemPromotionByItemIdAndNowBetweenPromotionStartDateAndPromotionEndDate(request.getItemId(), java.sql.Timestamp.valueOf(LocalDateTime.now()))
                         .orElseThrow(() -> new InvalidRequestException(MessageUtils.NO_PROMOTION_APPLIED));
 
-        Double itemPrice = item.getItemPrice().doubleValue();
-        Double itemPriceAppliedPromotion = item.getItemPrice().doubleValue();
-        Integer selectedPromotionIdx = -1;
-        Integer promotionIdx = 0;
+        double itemPrice = item.getItemPrice().doubleValue();
+        double itemPriceAppliedPromotion = item.getItemPrice().doubleValue();
+        int selectedPromotionIdx = -1;
 
+        int promotionIdx = 0;
         for(Promotion promotion : promotionList) {
-            Double itemPriceAppliedCurPromotion = itemPrice;
+            double itemPriceAppliedCurPromotion = itemPrice;
             if(promotion.getDiscountAmount() != null){
                 itemPriceAppliedCurPromotion -= promotion.getDiscountAmount();
             }

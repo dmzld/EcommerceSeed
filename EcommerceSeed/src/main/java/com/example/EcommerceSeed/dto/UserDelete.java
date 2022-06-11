@@ -15,14 +15,8 @@ public class UserDelete {
     @Builder
     @ToString
     public static class Request{
-        @NotNull
+        @NotNull(message = "사용자 아이디를 입력해주세요.")
         private Long userId;
-
-        public Request toEntity(){
-            return Request.builder()
-                    .userId(userId)
-                    .build();
-        }
     }
 
     @Getter
